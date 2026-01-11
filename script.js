@@ -10,12 +10,13 @@ const personalMovieDB = {
     privat: false
 };
 
-const a = prompt('Який останній фільм ви дивились?', ''),
-      b = prompt('Як ви його оціните', ''),
-      c = prompt('Який останній фільм ви дивились?', ''),
-      d = prompt('Як ви його оціните', '');
+for (let i = 0; i < 2; i++) {
+    const a = prompt('Який останній фільм ви дивились?', ''),
+          b = prompt('Як ви його оціните', '');
 
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[c] = d;
+          personalMovieDB.movies[a] = b;
+}
+
+
 
 console.log(personalMovieDB);
