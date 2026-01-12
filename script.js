@@ -14,9 +14,25 @@ for (let i = 0; i < 2; i++) {
     const a = prompt('Який останній фільм ви дивились?', ''),
           b = prompt('Як ви його оціните', '');
 
-          personalMovieDB.movies[a] = b;
+    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+        personalMovieDB.movies[a] = b;
+        console.log('done');
+    } else {
+        console.log('error');
+        i--;
+    }
+
+          
 }
 
-
+if (personalMovieDB.count < 10) {
+    console.log('Ви подивились замало фільмів');
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count <30) {
+    console.log('Ви хороший глядач');
+} else if (personalMovieDB.count >=30) {
+    console.log('Ви кіноман');
+} else {
+    console.log('Відбулась помилка');
+}
 
 console.log(personalMovieDB);
